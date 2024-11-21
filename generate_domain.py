@@ -1,13 +1,13 @@
-
+# genera un dominio y lo escribe al stdout
 from typing import Dict
 
 
-objects : Dict[str, Dict[str, int]] = \
-{
-    'plate' : {},
+# los materiales disponibles a crear o que se pueden crear
+objects : Dict[str, Dict[str, int]] = {
+    'plate'   : {},  # material primitivo,
     'circuit' : {},
-    'ybelt'   : {
-        'plate' : 1,
+    'ybelt'   : {    # material compuesto
+        'plate' : 1, # ingrediente y cantidad
     },
     'ysplitter' : {
         'plate' : 2,
@@ -20,6 +20,7 @@ objects : Dict[str, Dict[str, int]] = \
     },
 }
 
+# define la creacion de elementos
 def generate_creation(name: str, items: Dict[str, int]):
     preconditions = []
     effect = []
@@ -46,6 +47,7 @@ def generate_creation(name: str, items: Dict[str, int]):
 )
 """
 
+# cosas que el lisp necesita
 header = '(:requirements :strips)'
 types = '(:types'
 predicates = '(:predicates'
