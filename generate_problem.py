@@ -1,18 +1,19 @@
-from typing import Dict
-
+# genera un problema y lo escribe al stdout
+# cosas que lisp ocupa
 header = '(:domain factorio)'
 obj    = '(:objects'
 init   = '(:init'
 goal   = '(:goal (and'
 
-
 for i in range(12):
     obj += f' plate-{i}'
     init += f' (existing-plate plate-{i})'
+
 obj += ' - plate\n'
 for i in range(12):
     obj += f' circuit-{i}'
     init += f' (existing-circuit circuit-{i})'
+
 obj += ' - circuit\n'
 
 for i in range(4):
@@ -31,7 +32,7 @@ for i in range(2):
 obj += f' - ysplitter\n'
 
 
-
+# mas cosas lisp
 obj    += ')'
 init   += ')'
 goal += f'(existing-yunder yunder-{0})'
