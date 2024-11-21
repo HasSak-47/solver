@@ -6,10 +6,12 @@ objects : Dict[str, Dict[str, int]] = \
 {
     'plate' : {},
     'circuit' : {},
-    'ybelt'   : {},
+    'ybelt'   : {
+        'plate' : 1,
+    },
     'ysplitter' : {
         'plate' : 2,
-        'circuit' : 2,
+        'circuit' : 1,
         'ybelt': 1
     },
     'yunder'  : {

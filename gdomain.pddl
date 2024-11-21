@@ -23,12 +23,23 @@
 (consumed-yunder ?x - yunder)
 )
     
+(:action create-ybelt
+    :parameters ( ?plate-0 ?ybelt )
+    :precondition( and (existing-plate ?plate-0)
+        (possible-ybelt ?ybelt)
+    )
+    :effect (and (consumed-plate ?plate-0) (not(existing-plate ?plate-0))
+        (existing-ybelt ?ybelt)
+        (not (possible-ybelt ?ybelt))
+    )
+)
+
 (:action create-ysplitter
-    :parameters ( ?plate-0 ?plate-1 ?circuit-0 ?circuit-1 ?ybelt-0 ?ysplitter )
-    :precondition( and (existing-plate ?plate-0) (existing-plate ?plate-1) (existing-circuit ?circuit-0) (existing-circuit ?circuit-1) (existing-ybelt ?ybelt-0)
+    :parameters ( ?plate-0 ?plate-1 ?circuit-0 ?ybelt-0 ?ysplitter )
+    :precondition( and (existing-plate ?plate-0) (existing-plate ?plate-1) (existing-circuit ?circuit-0) (existing-ybelt ?ybelt-0)
         (possible-ysplitter ?ysplitter)
     )
-    :effect (and (consumed-plate ?plate-0) (not(existing-plate ?plate-0)) (consumed-plate ?plate-1) (not(existing-plate ?plate-1)) (consumed-circuit ?circuit-0) (not(existing-circuit ?circuit-0)) (consumed-circuit ?circuit-1) (not(existing-circuit ?circuit-1)) (consumed-ybelt ?ybelt-0) (not(existing-ybelt ?ybelt-0))
+    :effect (and (consumed-plate ?plate-0) (not(existing-plate ?plate-0)) (consumed-plate ?plate-1) (not(existing-plate ?plate-1)) (consumed-circuit ?circuit-0) (not(existing-circuit ?circuit-0)) (consumed-ybelt ?ybelt-0) (not(existing-ybelt ?ybelt-0))
         (existing-ysplitter ?ysplitter)
         (not (possible-ysplitter ?ysplitter))
     )
