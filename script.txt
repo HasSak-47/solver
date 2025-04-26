@@ -1,0 +1,13 @@
+# clip 1
+El sistema modela una fabrica la cual toma materiales y los convierte en productos.
+Los cuales tambien pueden ser utilizados como materiales para otros productos.
+Toma 2 tipos de materiales, los plates y circuits, genera y-belts y-splitters y y-unders.
+para hacer y-belts se utilizan 1 plate.
+para hacer y-splitters se ocupan un y-belt, un circuit y dos plates,
+para hacer y-unders se necesitan un y-belt y dos plates
+
+# clip 2
+Aqui esta el blackbox intentando resolver el sistema, quiere generar 1 y-belt, 2- y-unders y 1 y-splitter.
+Tomando como materiales 12 plates y 12 circuits.
+
+A pesar de que es un problema relativamente sencillo le tomo 1 minuto 12 segundos.
